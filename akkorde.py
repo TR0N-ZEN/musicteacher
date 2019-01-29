@@ -31,13 +31,13 @@ def großeSeptime(x):
 def reineOktave(x):
     return x + 12
 def durdreiklang(x):
-    return(Töne[x] + " " + Töne[großeTerz(x)] + " " + Töne[reineQuarte(x)])
+    return Töne[x] + " " + Töne[großeTerz(x)] + " " + Töne[reineQuarte(x)]
 def molldreiklang(x):
-    return(Töne[x] + " " + Töne[kleineTerz(x)] + " " + Töne[reineQuinte(x)])
+    return Töne[x] + " " + Töne[kleineTerz(x)] + " " + Töne[reineQuinte(x)]
 def Dominantseptakkord(x):
     return durdreiklang(x) + " " + Töne[kleineSeptime(x)]
 def großerSeptakkord(x):
-    return durdreiklang(x) + " " + großeSeptime(x)
+    return durdreiklang(x) + " " + Töne[großeSeptime(x)]
 def Mollseptakkord(x):
     return molldreiklang(x) + " " + Töne[kleineSeptime(x)]
 def Mollseptakkord_mit_großerSeptime(x):
