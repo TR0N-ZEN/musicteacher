@@ -1,7 +1,11 @@
 import re
 
 Töne = ["C","Cis","D","Dis", "E", "F","Fis","G","Gis","A","Ais","H","B","c", "cis", "d", "dis", "e", "f", "fis", "g", "gis", "a", "ais", "h", "c'" , "cis'", "d'", "dis'", "e'", "f'", "fis'", "g'", "gis'", "a'", "ais'", "h'"]
-Tonal = ["dur", "moll"]
+Tonalitäten = ["dur", "moll"]
+
+##################################################
+#INTERVALLE#
+##################################################
 def Prime(x):
     return x
 def kleineSekunde(x):
@@ -30,8 +34,12 @@ def großeSeptime(x):
     return x + 11
 def reineOktave(x):
     return x + 12
+
+##################################################
+#AKKORDE#
+##################################################
 def durdreiklang(x):
-    return Töne[x] + " " + Töne[großeTerz(x)] + " " + Töne[reineQuarte(x)]
+    return Töne[x] + " " + Töne[großeTerz(x)] + " " + Töne[reineQuinte(x)]
 def molldreiklang(x):
     return Töne[x] + " " + Töne[kleineTerz(x)] + " " + Töne[reineQuinte(x)]
 def Dominantseptakkord(x):
@@ -43,22 +51,31 @@ def Mollseptakkord(x):
 def Mollseptakkord_mit_großerSeptime(x):
     return molldreiklang(x) + " " + Töne[großeSeptime(x)]
 
-userinput = input("Grundton Tonalität")
+userinput = input("Eingabeformatierungsbeispiele: \n 'c moll' oder 'c dur 7' oder 'c dur maj7' \n")
 liste = re.split(" ", userinput)
 eingabeGrundton = liste[0]
 eingabeTonalität = liste[1]
+eingabeVierterTon = liste[2]
 
 if eingabeGrundton in Töne:
-    Grundton = eingabeGrundton
+    Grundtonindex = Töne.index(eingabeGrundton)
+    if eingabeTonalität in Tonalitäten:
+        Tonalitätsindex = Tonalitäten.index(eingabeTonalität)
+        if Tonalitätsindex == Tonalitäten.index("dur"):
+            print(durdreiklang(Grundtonindex))
+        elif Tonalitätsindex == Tonalitäten.index("moll"):
+            print(molldreiklang(Grundtonindex))
+    else:
+        print("eingegebene Tonalität nicht gültig")
+elif len(eingabeGrundton) == 2:
+    for i in Töne:
+        if eingabeGrundton == i + "7":
+            print(Dominantseptakkord(Töne.index(eingabeGrundton[0])))
+        # elif eingabeGrundton == i + "5":
+        # elif eingabeGrundton == i + "4":
+        # elif eingabeGrundton == i + "3":
+        # elif eingabeGrundton == i + "9":
+# elif len(eingabeGrundton) == 5:
+#     if eingabeGrundton == i + maj + "7":
 else:
-    print("Tonname falsch")
-
-if eingabeTonalität in Tonal:
-    Tonalität = eingabeTonalität
-else:
-    print("eigegebene Tonalität falsch")
-
-if Tonalität == "dur":
-    print(durdreiklang(Grundton))
-elif Tonalität == "moll":
-    print(molldreiklang(Grundton))
+    print("Tonname nicht gültig")
