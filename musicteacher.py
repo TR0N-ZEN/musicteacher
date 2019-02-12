@@ -1,4 +1,7 @@
-import akkorde from akkorde
+import tones
+import intervals
+import scales
+
 
 
 

@@ -3,29 +3,6 @@ import tones
 import intervals
 
 
-##################################################
-#INTERVALLE#
-##################################################
-
-
-#######################################
-#Intervall dictonary
-#######################################
-x = 0
-i = { 
-    "1": Prime(x),
-    "b2": kleineSekunde(x),
-    "2": großeSekunde(x),
-    "b3": kleineTerz(x),
-    "3": großeTerz(x),
-    "4": reineQuarte(x),
-    "5": reineQuinte(x),
-    "b6": kleineSexte(x),
-    "6": großeSexte(x),
-    "b7": kleineSeptime(x),
-    "7": kleineSeptime(x),
-    "8": reineOktave(x)
-}
 
 ##################################################
 #AKKORDE#

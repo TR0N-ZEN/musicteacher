@@ -1,32 +1,33 @@
-def Prime(x):
+def prime(x):
     return x
-def kleineSekunde(x):
+def minor_second(x):
     return x + 1
-def großeSekunde(x):
+def major_second(x):
     return x + 2
-def kleineTerz(x):
+def minor_fourth(x):
     return x + 3
-def großeTerz(x):
+def major_third(x):
     return x + 4
-def verminderteQuarte(x):
+def diminished_fourth(x):
     return x + 4 
-def reineQuarte(x):
+def perfect_fourth(x):
     return x + 5
-def übermäßigeQuarte(x):
+def augmented_fourth(x):
     return x + 6
-def verminderteQuinte(x):
+def diminished_fifth(x):
     return x + 6
-def reineQuinte(x):
+def perfect_fifth(x):
     return x + 7
-def übermäßigeQuinte(x):
+def augmented_fifth(x):
     return x + 8
-def kleineSexte(x):
+def minor_sixth(x):
     return x + 8
-def großeSexte(x):
+def major_sixth(x):
     return x + 9
-def kleineSeptime(x):
+def minor_seventh(x):
     return x + 10
-def großeSeptime(x):
+def major_seventh(x):
     return x + 11
-def reineOktave(x):
+def perfect_eighth(x):
     return x + 12
+
