@@ -61,3 +61,6 @@ class diminished:
     def __init__(self, x, fourth, fifth):
         self.fourth = x + 4
         self.fifth = x + 6
+
+def lesson():
+    print("This is the unfinished lesson about intervals")
