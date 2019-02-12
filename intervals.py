@@ -30,4 +30,34 @@ def major_seventh(x):
     return x + 11
 def perfect_eighth(x):
     return x + 12
-    
+
+####################################################
+#or written in classes
+####################################################
+
+class perfect:
+    def __init__(self, x, prime, fourth, fifth, eighth):
+        self.prime = x
+        self.fourth = x + 5
+        self.fifth = x + 7
+        self.eighth = x + 12
+class major:
+    def __init__(self, x, second, third, sixth, seventh):
+        self.second  = x + 2
+        self.third = x + 4
+        self.sixth = x + 9
+        self.seventh = x + 11
+class minor:
+    def __init__(self, x, second, third, sixth, seventh):
+        self.second = x + 1
+        self.third = x + 3
+        self.sixth = x + 8
+        self.seventh = x + 10
+class augmented:
+    def __init__(self, x, fourth, fifth):
+        self.fourth = x + 6
+        self.fifth = x + 8
+class diminished:
+    def __init__(self, x, fourth, fifth):
+        self.fourth = x + 4
+        self.fifth = x + 6
