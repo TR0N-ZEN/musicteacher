@@ -1,0 +1,8 @@
+Hi. An interval is the difference in frequency* of two tones.
+The difference, we should adapt the term interval asap, between 
+the according frequency to c and d is called 'major second'.
+There is a table:
+
+_______________________________________________________________
+* more precisely about the amount of vibrations/oscillations per second
+  and not as another property of a frequency it's shape
