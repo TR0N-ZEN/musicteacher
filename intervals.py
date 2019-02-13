@@ -63,4 +63,6 @@ class diminished:
         self.fifth = x + 6
 
 def lesson():
-    print("This is the unfinished lesson about intervals")
+    textobject = open("intervals_lesson.txt","r")
+    text = textobject.read()
+    print(text)

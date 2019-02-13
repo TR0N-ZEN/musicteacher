@@ -1,6 +1,9 @@
 Hi. A Tone is a frequency.
 The specific tone names refer to specific or lets say defined frequencies.
 The note c for example indicates a frequency of 131 Hz.
-Or as a more practical example the thick string on a usual guitar is called the E-string
-(funfact for later: E and not e because for notation reasons)
-because if you play it without shortening it it swings and creates a sound with the frequency of the e which is 165 Hz.
+Or as a more practical example the thick string on a usual guitar is called the E-string*
+because if you play it without shortening it it swings and creates a sound with the 
+frequency of the e which is 165 Hz.
+
+___________________________________________________________________________________________
+*funfact for later: E and not e because for notation reasons

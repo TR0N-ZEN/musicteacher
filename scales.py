@@ -8,7 +8,9 @@ def dur(x):
     # return tones[perfect.prime(x) + tones[major.second(x)] + tones[major.third(x)] + tones[perfect_fourth(x)] + tones[perfect.fifth(x)] + tones[major.sixth(x)] + tones[major.seventh(x)] + tones[perfect.eighth(x)]
 
 def lesson():
-    print("Scales are a defined row of tones being associtated to each other through the specific scales.\nThis associtation follows this rule:\n    Define a root (the first tone aka ground color aka tonic keynote),\n   then we need to know which association we use  or formula respectively")
+    textobject = open("intervals_lesson.txt","r")
+    text = textobject.read()
+    print(text)
     i = input("enter root")
     try:
         o = tones.index(i)

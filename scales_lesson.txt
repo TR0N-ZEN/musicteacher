@@ -1,0 +1,4 @@
+Scales are a defined row of tones being associtated to each other through the specific scales.
+This associtation follows this rule:
+    Define a root (the first tone aka ground color aka tonic keynote),
+    then we need to know which association or formula we use respectively.
