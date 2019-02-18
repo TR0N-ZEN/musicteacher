@@ -16,7 +16,7 @@ def lesson():
     i = input("enter root")
     try:
         o = tones.index(i)
-        print("dur chord: " + dur(o))
-        print("minor chord: " + minor(o))
+        print(i + "dur scale: " + dur(o))
+        print(i + "minor scale: " + minor(o))
     except:
         print("fuckin dumbass type in a real root, u know a ground color, tonic keynote")
