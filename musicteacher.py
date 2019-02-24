@@ -44,36 +44,31 @@ def perfect_eighth(x):
 ####################################################
 
 class perfect:
-    def __init__(self, x, prime, fourth, fifth, eighth):
+    def __init__(self, x):
         self.prime = x
         self.fourth = x + 5
         self.fifth = x + 7
         self.eighth = x + 12
 class major:
-    def __init__(self, x, second, third, sixth, seventh):
+    def __init__(self, x):
         self.second  = x + 2
         self.third = x + 4
         self.sixth = x + 9
         self.seventh = x + 11
 class minor:
-    def __init__(self, x, second, third, sixth, seventh):
+    def __init__(self, x):
         self.second = x + 1
         self.third = x + 3
         self.sixth = x + 8
         self.seventh = x + 10
 class augmented:
-    def __init__(self, x, fourth, fifth):
+    def __init__(self, x):
         self.fourth = x + 6
         self.fifth = x + 8
 class diminished:
-    def __init__(self, x, fourth, fifth):
+    def __init__(self, x):
         self.fourth = x + 4
         self.fifth = x + 6
-mydict:
-def lesson(origin):
-    textobject = open(origin,"r")
-    text = textobject.read()
-    print(text + "\n")
 
 class scales:
     def __init__(self, x):
@@ -84,12 +79,24 @@ class scales:
         self.natural_minor(x) = tones[x] + tones[x+2] + tones[x+3] + tones[x+5] + tones[x+6] + tones[x+8] + tones[x+10] + tones[x+12]
         self.harmonic_minor(x) =  tones[x] + tones[x+2] + tones[x+3] + tones[x+5] + tones[x+6] + tones[x+8] + tones[x+11] + tones[x+12]
 
+class chord:
+
+dictonary = {
+    "1": "intervals_lesson.txt",
+    "2": "scales_lesson.txt",
+    "3": "chords_lesson.txt"
+}
+
+def lesson(origin):
+    textobject = open(dictonary[origin],"r")
+    text = textobject.read()
+    print(text + "\n")
+
 print("What do you want to do \noptions are: \n 1 - tones\n 2 - intervals\n 3 - scales ")
 i = input("please enter the accoring number: ")
-
 if i == "1":
-    tone.lesson()
+    lesson(1)
 elif i == "2":
-    intervals.lesson()
+    lesson(2)
 elif i == "3":
-    
+    lesson(3)
