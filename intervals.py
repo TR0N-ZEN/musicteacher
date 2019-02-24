@@ -65,4 +65,4 @@ class diminished:
 def lesson():
     textobject = open("intervals_lesson.txt","r")
     text = textobject.read()
-    print(text)
+    print(text + "\n")
