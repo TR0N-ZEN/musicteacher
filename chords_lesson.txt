@@ -1,0 +1,32 @@
+Chords are patterns of simultaneously acting tones.
+
+
+Dur chords (abbr.: capital letter or with the appendix "major", e.g. "C major" or "C maj" )
+consist of the root its major third and thats minor third / the roots perfect fifth.
+(C E G)
+
+Minor chords (abbr.: lower case letter or appendix "minor", e.g. "c minor", "c min")
+of the root its minor third and thats major third / the roots perfect fifth.
+(C Eb G)
+
+Dominant seventh chord (abbr.: appendix 7, e.g. "C7")
+consists of major triad / major chord and the roots minor seventh 
+    (10 steps forward from root or two backwards for an inversion*)
+(C E G Bb)
+
+Major seventh chord (abbr.:appendix M7, e.g. "CM7")
+consists of major triad / major chord and the roots major seventh 
+    (11 steps forward from root or one backwards for an inversion*)
+(C E G B)
+    
+Minor seventh chords (abbr.: appendix m7, e.g. "Cm7")
+minor triad / minor chord + roots minor seventh
+(C Eb G Bb)
+
+Half-diminished seventh chord
+
+Diminished seventh chord
+
+SUS-2 chords = root + perfect fourth + major second                                             (C F G)
+SUS-4 chords = root + major second + perfect fourth                                             (C D G)
+seperate from major and minor chords and dont need to be dissolved**.
