@@ -1,11 +1,10 @@
-#import tone
-#import intervals
-#import scales
+import os
 
-tones = ["C", "Cis", "D", "Dis", "E", "F", "Fis", "G", "Gis", "A", "Ais", "H", "B", "c", "cis", "d", "dis", "e", "f", "fis", "g", "gis", "a", "ais", "h", "c'" , "cis'", "d'", "dis'", "e'", "f'", "fis'", "g'", "gis'", "a'", "ais'", "h'"]
+tones = ["C", "Cis", "D", "Dis", "E", "F", "Fis", "G", "Gis", "A", "Ais", "H", "c", "cis", "d", "dis", "e", "f", "fis", "g", "gis", "a", "ais", "h", "c'" , "cis'", "d'", "dis'", "e'", "f'", "fis'", "g'", "gis'", "a'", "ais'", "h'"]
 tonalities = ["dur", "moll"]
 extension = ["1", "b2", "2", "b3", "3", "4", "5", "b6", "6", "b7", "7", "8"]
 
+#intervals
 def prime(x):
     return x
 def minor_second(x):
@@ -39,64 +38,49 @@ def major_seventh(x):
 def perfect_eighth(x):
     return x + 12
 
-####################################################
-#or written in classes
-####################################################
+#scales
+def major_scale(x):
+    return x, x+2, x+4, x+5, x+7, x+9, x+11, x+12
+def natural_minor_scale(x):
+    return x, x+2, x+3, x+5, x+7, x+8, x+10, x+12
+def harmonic_minor_scale(x):
+    return x, x+2, x+3, x+5, x+7, x+8, x+11, x+12
+def melodic_minor_scale(x):
+    return x, x+2, x+3, x+5, x+7, x+9, x+11, x+12
 
-class perfect:
-    def __init__(self, x):
-        self.prime = x
-        self.fourth = x + 5
-        self.fifth = x + 7
-        self.eighth = x + 12
-class major:
-    def __init__(self, x):
-        self.second  = x + 2
-        self.third = x + 4
-        self.sixth = x + 9
-        self.seventh = x + 11
-class minor:
-    def __init__(self, x):
-        self.second = x + 1
-        self.third = x + 3
-        self.sixth = x + 8
-        self.seventh = x + 10
-class augmented:
-    def __init__(self, x):
-        self.fourth = x + 6
-        self.fifth = x + 8
-class diminished:
-    def __init__(self, x):
-        self.fourth = x + 4
-        self.fifth = x + 6
+# class scales:
+#     def __init__(self, x):
+#         self.major(x) = [x, (x+2), (x+4), (x+5), (x+7), (x+9), (x+11), (x+12)]
+#         self.natural_minor(x) = [x, x+2, x+3, x+5, x+6, x+8, x+10 , x+12]
+#         self.harmonic_minor(x) =  [x, x+2, x+3, x+5, x+6, x+8, x+11 , x+12]
 
-class scales:
-    def __init__(self, x):
-        self.major(x) = tones[x] + tones[x+2] + tones[x+4] + tones[x+5] + tones[x+7] + tones[x+9] + tones[x+11] + tones[x+12]
-        # equivalent would be: 
-        # return tones[prime(x)] + tones[major_second(x)] + tones[major_third(x)] + tones[perfect_fourth(x)] + tones[perfect_fifth(x)] + tones[major_sixth(x)] + tones[major_seventh(x)]
-        # return tones[perfect.prime(x) + tones[major.second(x)] + tones[major.third(x)] + tones[perfect_fourth(x)] + tones[perfect.fifth(x)] + tones[major.sixth(x)] + tones[major.seventh(x)] + tones[perfect.eighth(x)]
-        self.natural_minor(x) = tones[x] + tones[x+2] + tones[x+3] + tones[x+5] + tones[x+6] + tones[x+8] + tones[x+10] + tones[x+12]
-        self.harmonic_minor(x) =  tones[x] + tones[x+2] + tones[x+3] + tones[x+5] + tones[x+6] + tones[x+8] + tones[x+11] + tones[x+12]
 
-class chord:
-
-dictonary = {
-    "1": "intervals_lesson.txt",
-    "2": "scales_lesson.txt",
-    "3": "chords_lesson.txt"
-}
+#chords
+def major_chord(x):
+    return x, x+4, x+7
+def minor_chord(x):
+    return x, x+3, x+7
+def augmented_chord(x):
+    return x, x+4, x+8
+def diminished_chord(x):
+    return x, x+3, x+6
 
 def lesson(origin):
-    textobject = open(dictonary[origin],"r")
+    textobject = open(origin ,"r")
     text = textobject.read()
     print(text + "\n")
 
-print("What do you want to do \noptions are: \n 1 - tones\n 2 - intervals\n 3 - scales ")
+print("What do you want to do \noptions are: \n 1 - tones\n 2 - intervals\n 3 - scales\n 4 - chords ")
 i = input("please enter the accoring number: ")
 if i == "1":
-    lesson(1)
+    lesson("tones_lesson.txt")
 elif i == "2":
-    lesson(2)
+    lesson("intervals_lesson.txt")
 elif i == "3":
-    lesson(3)
+    lesson("scales_lesson.txt")
+    i = input("You can now enter a root and get the tones of its scale.\n root: ")
+    rootinteger = tones.index(i)
+    for e in major_scale(rootinteger):
+        print(tones[e])
+elif i == "4":
+    lesson("chords_lesson.txt")
