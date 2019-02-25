@@ -78,9 +78,25 @@ elif i == "2":
     lesson("intervals_lesson.txt")
 elif i == "3":
     lesson("scales_lesson.txt")
-    i = input("You can now enter a root and get the tones of its scale.\n root: ")
-    rootinteger = tones.index(i)
-    for e in major_scale(rootinteger):
-        print(tones[e])
+    ri = input("You can now enter a root and get the tones of its afore queried scale.\n root: ")
+    rootinteger = tones.index(ri)
+    si = input("Input a scale type: ")
+    if si.find("major")!=-1:
+        for e in major_scale(rootinteger):
+            print(tones[e])
+    if si.find("natural minor")!=-1:
+        for e in natural_minor_scale(rootinteger):
+            print(tones[e])
+    if si.find("harmonic minor")!=-1:
+        for e in harmonic_minor_scale(rootinteger):
+            print(tones[e])
+    if si.find("melodic minor")!=-1:
+        for e in melodic_minor_scale(rootinteger):
+            print(tones[e])
 elif i == "4":
     lesson("chords_lesson.txt")
+    i = input("You can now enter a root and get the tones of its scale.\n root: ")
+    rootinteger = tones.index(i)
+    c = [0,4,7]
+    for e in c:
+        print(tones[rootinteger+e])
