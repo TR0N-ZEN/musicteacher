@@ -1,6 +1,6 @@
 import os
 
-tones = ["C", "Cis", "D", "Dis", "E", "F", "Fis", "G", "Gis", "A", "Ais", "H", "c", "cis", "d", "dis", "e", "f", "fis", "g", "gis", "a", "ais", "h", "c'" , "cis'", "d'", "dis'", "e'", "f'", "fis'", "g'", "gis'", "a'", "ais'", "h'"]
+tones = ["C", "Cis", "D", "Dis", "E", "F", "Fis", "G", "Gis", "A", "Ais", "B", "c", "cis", "d", "dis", "e", "f", "fis", "g", "gis", "a", "ais", "b", "c'" , "cis'", "d'", "dis'", "e'", "f'", "fis'", "g'", "gis'", "a'", "ais'", "b'"]
 tonalities = ["dur", "moll"]
 extension = ["1", "b2", "2", "b3", "3", "4", "5", "b6", "6", "b7", "7", "8"]
 
@@ -65,19 +65,7 @@ def augmented_chord(x):
 def diminished_chord(x):
     return x, x+3, x+6
 
-def lesson(origin):
-    textobject = open(origin ,"r")
-    text = textobject.read()
-    print(text + "\n")
-
-print("What do you want to do \noptions are: \n 1 - tones\n 2 - intervals\n 3 - scales\n 4 - chords ")
-i = input("please enter the accoring number: ")
-if i == "1":
-    lesson("tones_lesson.txt")
-elif i == "2":
-    lesson("intervals_lesson.txt")
-elif i == "3":
-    lesson("scales_lesson.txt")
+def scales_interactive():
     ri = input("You can now enter a root and get the tones of its afore queried scale.\n root: ")
     rootinteger = tones.index(ri)
     si = input("Input a scale type: ")
@@ -93,10 +81,28 @@ elif i == "3":
     if si.find("melodic minor")!=-1:
         for e in melodic_minor_scale(rootinteger):
             print(tones[e])
-elif i == "4":
-    lesson("chords_lesson.txt")
+
+def chords_interactice():
     i = input("You can now enter a root and get the tones of its scale.\n root: ")
     rootinteger = tones.index(i)
     c = [0,4,7]
     for e in c:
         print(tones[rootinteger+e])
+
+def lesson_text(origin):
+    textobject = open(origin ,"r")
+    text = textobject.read()
+    print(text + "\n")
+
+print("What do you want to do \noptions are: \n 1 - tones\n 2 - intervals\n 3 - scales\n 4 - chords ")
+i = input("please enter the accoring number: ")
+if i == "1":
+    lesson_text("tones_lesson.txt")
+elif i == "2":
+    lesson_text("intervals_lesson.txt")
+elif i == "3":
+    lesson_text("scales_lesson.txt")
+    scales_interactive()
+elif i == "4":
+    lesson_text("chords_lesson.txt")
+    chords_interactice()
