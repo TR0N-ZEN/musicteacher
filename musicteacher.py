@@ -65,8 +65,33 @@ def augmented_chord(x):
 def diminished_chord(x):
     return x, x+3, x+6
 
+def intervals_interactice():
+    i1 = input("Type in the first tone: ")
+    i2 = input("Type in the second tone: ")
+    first_tone_int = tones.index(i1)
+    second_tone_int = tones.index(i2)
+    difference = second_tone_int - first_tone_int
+    if difference > 13:
+        difference = difference % 12
+    intervals = {
+        0 : "prime",
+        1 : "minor second",
+        2 : "major second",
+        3 : "minor third",
+        4 : "major third",
+        5 : "perferct fourth",
+        6 : "augmented fourth / diminished fifth / tri-tonus",
+        7 : "perfect fifth",
+        8 : "minor sixth",
+        9 : "major sixth",
+        10 : "minor seventh",
+        11 : "major seventh",
+        12 : "perfect eighth"
+    }
+    print(intervals[difference])
+
 def scales_interactive():
-    ri = input("You can now enter a root and get the tones of its afore queried scale.\n root: ")
+    ri = input("You can now enter a root and get the tones of its later queried scale.\n root: ")
     rootinteger = tones.index(ri)
     si = input("Input a scale type: ")
     if si.find("major")!=-1:
@@ -83,11 +108,19 @@ def scales_interactive():
             print(tones[e])
 
 def chords_interactice():
-    i = input("You can now enter a root and get the tones of its scale.\n root: ")
+    i = input("You can now enter a root and get the tones of its later queried chord.\n root: ")
+    o = input("Enter chord type: ")
     rootinteger = tones.index(i)
-    c = [0,4,7]
+    if o.find("diminished") != -1:
+        c = diminished_chord(rootinteger)
+    elif o.find("augmented") != -1:
+        c = augmented_chord(rootinteger)
+    elif o.find("major") != -1:
+        c = major_chord(rootinteger)
+    elif o.find("minor") != -1:    
+        c = minor_chord(rootinteger)
     for e in c:
-        print(tones[rootinteger+e])
+        print(tones[e])
 
 def lesson_text(origin):
     textobject = open(origin ,"r")
