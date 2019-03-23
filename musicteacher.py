@@ -133,6 +133,7 @@ if i == "1":
     lesson_text("tones_lesson.txt")
 elif i == "2":
     lesson_text("intervals_lesson.txt")
+    intervals_interactice()
 elif i == "3":
     lesson_text("scales_lesson.txt")
     scales_interactive()
