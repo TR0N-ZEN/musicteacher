@@ -116,6 +116,7 @@ def wholetone_pentatonic(r,count):
         if count < 3:
             count = count + 1
             wholetone_pentatonic(perfect_fifth(r),count)
+        count = 0
 
 def scales_pentatonics():
     ri = input("You can now enter a root and get the tones of its pentatonic scale.\n root: ")
