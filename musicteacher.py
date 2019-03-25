@@ -71,7 +71,7 @@ def intervals_interactice():
     first_tone_int = tones.index(i1)
     second_tone_int = tones.index(i2)
     difference = second_tone_int - first_tone_int
-    if difference > 13:
+    if difference > 12:
         difference = difference % 12
     intervals = {
         0 : "prime",
@@ -90,7 +90,7 @@ def intervals_interactice():
     }
     print(intervals[difference])
 
-def scales_interactive():
+def scales_heptatonics():
     ri = input("You can now enter a root and get the tones of its later queried scale.\n root: ")
     rootinteger = tones.index(ri)
     si = input("Input a scale type: ")
@@ -106,6 +106,18 @@ def scales_interactive():
     if si.find("melodic minor")!=-1:
         for e in melodic_minor_scale(rootinteger):
             print(tones[e])
+
+def scales_pentatonics():
+    ri = input("You can now enter a root and get the tones of its later queried scale.\n root: ")
+    rootinteger = tones.index(ri)
+    global count
+    count = 0
+    def wholetone_pentatonic(r):
+        print(tones[perfect_fifth(r)])
+        if count > 6:
+            count = count + 1
+            wholetone_pentatonic(perfect_fifth(r))
+    wholetone_pentatonic(rootinteger)
 
 def chords_interactice():
     i = input("You can now enter a root and get the tones of its later queried chord.\n root: ")
@@ -127,7 +139,7 @@ def lesson_text(origin):
     text = textobject.read()
     print(text + "\n")
 
-print("What do you want to do \noptions are: \n 1 - tones\n 2 - intervals\n 3 - scales\n 4 - chords ")
+print("What do you want to do \noptions are: \n 1 tones\n 2 intervals\n 3 scales\n 4 chords\n ")
 i = input("please enter the accoring number: ")
 if i == "1":
     lesson_text("tones_lesson.txt")
@@ -135,8 +147,14 @@ elif i == "2":
     lesson_text("intervals_lesson.txt")
     intervals_interactice()
 elif i == "3":
-    lesson_text("scales_lesson.txt")
-    scales_interactive()
+    lesson_text("scales.txt")
+    i = input("1 heptatonics\n 2 pentatonics")
+    if i == 1:
+        lesson_text("scales_heptatonics.txt")
+        scales_heptatonics()
+    elif i == "2":
+        lesson_text("scales_pentatonics.txt")
+        scales_pentatonics()
 elif i == "4":
     lesson_text("chords_lesson.txt")
     chords_interactice()
