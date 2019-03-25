@@ -1,0 +1,6 @@
+There are different pentatonic scales.
+
+Wholetone pentatonic scales:
+can be assimilated by stacking perfect fifths.
+The root gets its perfect fifth. The the perfect fifth gets its perfect fifth and so on until the fifth time.
+Now we put all the tones in one octave range (we have to lower the octave of higher notes).

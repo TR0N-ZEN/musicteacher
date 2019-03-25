@@ -1,7 +1,7 @@
-Scales are a defined row of tones being associtated to each other through the specific scales.
+Scales are a defined rows of tones being associtated to each other through the specific scales.
 
 Every scale has got a root/ground color/keynote which is the tone the rest of the scale builds on.
 
-From the root you´ve got different ways.
+From the root you have got different ways.
 You can choose whether to walk the path of the heptatonic or the pentatonic or even others.
 This decision alters the kind of association.
