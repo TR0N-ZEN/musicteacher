@@ -107,17 +107,22 @@ def scales_heptatonics():
         for e in melodic_minor_scale(rootinteger):
             print(tones[e])
 
-def scales_pentatonics():
-    ri = input("You can now enter a root and get the tones of its later queried scale.\n root: ")
-    rootinteger = tones.index(ri)
-    global count
-    count = 0
-    def wholetone_pentatonic(r):
+
+
+def wholetone_pentatonic(r,count):
+        if r - legacy > 12:
+            r = r - 12
         print(tones[perfect_fifth(r)])
-        if count > 6:
+        if count < 3:
             count = count + 1
-            wholetone_pentatonic(perfect_fifth(r))
-    wholetone_pentatonic(rootinteger)
+            wholetone_pentatonic(perfect_fifth(r),count)
+
+def scales_pentatonics():
+    ri = input("You can now enter a root and get the tones of its pentatonic scale.\n root: ")
+    rootinteger = tones.index(ri)
+    global legacy
+    legacy = rootinteger
+    wholetone_pentatonic(rootinteger, 0)
 
 def chords_interactice():
     i = input("You can now enter a root and get the tones of its later queried chord.\n root: ")
@@ -148,8 +153,8 @@ elif i == "2":
     intervals_interactice()
 elif i == "3":
     lesson_text("scales.txt")
-    i = input("1 heptatonics\n 2 pentatonics")
-    if i == 1:
+    i = input(" 1 heptatonics\n 2 pentatonics\n")
+    if i == "1":
         lesson_text("scales_heptatonics.txt")
         scales_heptatonics()
     elif i == "2":
