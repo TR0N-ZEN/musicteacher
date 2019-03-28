@@ -107,8 +107,6 @@ def scales_heptatonics():
         for e in melodic_minor_scale(rootinteger):
             print(tones[e])
 
-
-
 def wholetone_pentatonic(r,count):
         if r - legacy > 12:
             r = r - 12
