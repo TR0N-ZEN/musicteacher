@@ -58,7 +58,7 @@ def pentatonics():
     scaletype = input("Input a scale type: ")
     scale_dicto = {
         "major": scales.pentatonics().major(rootinteger),
-        "natural minor": scales.pentatonics().minor(rootinteger)
+        "minor": scales.pentatonics().minor(rootinteger)
     }
     translator(scale_dicto.get(scaletype))
 
