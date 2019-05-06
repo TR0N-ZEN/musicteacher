@@ -97,4 +97,4 @@ elif i == "3":
         pentatonics()
 elif i == "4":
     lesson_text("chords_lesson.txt")
-    chords_interactive()#
+    chords_interactive()
