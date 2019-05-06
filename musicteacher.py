@@ -14,12 +14,6 @@ def translator(tupleofintegers): # translates index number to according tones in
         # listoftonesrequested.append(tones[e])
     # return list listoftonesrequested
 
-# class scales:
-#     def __init__(self, x):
-#         self.major(x) = [x, (x+2), (x+4), (x+5), (x+7), (x+9), (x+11), (x+12)]
-#         self.natural_minor(x) = [x, x+2, x+3, x+5, x+6, x+8, x+10 , x+12]
-#         self.harmonic_minor(x) =  [x, x+2, x+3, x+5, x+6, x+8, x+11 , x+12]
-
 def intervals_interactice():
     i1 = input("Type in the first tone: ")
     i2 = input("Type in the second tone: ")
@@ -59,11 +53,14 @@ def heptatonics():
     translator(scale_dicto.get(scaletype))
 
 def pentatonics():
-    ri = input("You can now enter a root and get the tones of its pentatonic scale.\n root: ")
-    rootinteger = tones.index(ri)
-    global legacy
-    legacy = rootinteger
-    scales.pentatonics().wholetone(rootinteger)
+    root = input("You can now enter a root and get the tones of its later queried scale.\n root: ")
+    rootinteger = tones.index(root)
+    scaletype = input("Input a scale type: ")
+    scale_dicto = {
+        "major": scales.pentatonics().major(rootinteger),
+        "natural minor": scales.pentatonics().minor(rootinteger)
+    }
+    translator(scale_dicto.get(scaletype))
 
 def chords_interactice():
     root = input("You can now enter a root and get the tones of its later queried chord.\n root: ")
