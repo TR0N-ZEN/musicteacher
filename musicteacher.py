@@ -14,7 +14,7 @@ def translator(tupleofintegers): # translates index number to according tones in
         # listoftonesrequested.append(tones[e])
     # return list listoftonesrequested
 
-def intervals_interactice():
+def intervals_interactive():
     i1 = input("Type in the first tone: ")
     i2 = input("Type in the second tone: ")
     first_tone_int = tones.index(i1)
@@ -85,10 +85,10 @@ if i == "1":
     lesson_text("tones_lesson.txt")
 elif i == "2":
     lesson_text("intervals_lesson.txt")
-    intervals_interactice()
+    intervals_interactive()
 elif i == "3":
     lesson_text("scales.txt")
-    i = input(" 1 heptatonics\n 2 pentatonics\n")
+    i = input(" 1 heptatonics\n 2 pentatonics\n\n")
     if i == "1":
         lesson_text("scales_heptatonics.txt")
         heptatonics()
