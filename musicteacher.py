@@ -62,7 +62,7 @@ def pentatonics():
     }
     translator(scale_dicto.get(scaletype))
 
-def chords_interactice():
+def chords_interactive():
     root = input("You can now enter a root and get the tones of its later queried chord.\n root: ")
     chord_type = input("Enter chord type: ")
     rootinteger = tones.index(root)
@@ -97,4 +97,4 @@ elif i == "3":
         pentatonics()
 elif i == "4":
     lesson_text("chords_lesson.txt")
-    chords_interactice()
+    chords_interactive()#
