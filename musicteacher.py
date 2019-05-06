@@ -59,11 +59,14 @@ def heptatonics():
     translator(scale_dicto.get(scaletype))
 
 def pentatonics():
-    ri = input("You can now enter a root and get the tones of its pentatonic scale.\n root: ")
-    rootinteger = tones.index(ri)
-    global legacy
-    legacy = rootinteger
-    scales.pentatonics().wholetone(rootinteger)
+    root = input("You can now enter a root and get the tones of its later queried scale.\n root: ")
+    rootinteger = tones.index(root)
+    scaletype = input("Input a scale type: ")
+    scale_dicto = {
+        "major": scales.pentatonics().major(rootinteger),
+        "natural minor": scales.pentatonics().minor(rootinteger)
+    }
+    translator(scale_dicto.get(scaletype))
 
 def chords_interactice():
     root = input("You can now enter a root and get the tones of its later queried chord.\n root: ")
