@@ -3,9 +3,6 @@
 #include <string.h>
 
 int scale[5];
-/*
-char translated[];
-*/
 char tones[][5] = {"C", "Cis", "D", "Dis", "E", "F", "Fis", "G", "Gis", "A", "Ais", "B", "c", "cis", "d", "dis", "e", "f", "fis", "g", "gis", "a", "ais", "b", "c'" , "cis'", "d'", "dis'", "e'", "f'", "fis'", "g'", "gis'", "a'", "ais'", "b'"};
 char tonalities[][6] = {"minor", "major"};
 /*
