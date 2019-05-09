@@ -2,14 +2,12 @@
 #include <stdlib.h>
 #include <string.h>
 
-int a = 12;
-
-
-int level1(){
-    printf("level1");
-};
+char a[5];
+char b[10];
 
 int main(){
-    printf("%d", &a);
+    scanf("%s", a);
+    scanf("%s", b);
+    printf("%d", strcmp(a, b));
     system("PAUSE");
 };
