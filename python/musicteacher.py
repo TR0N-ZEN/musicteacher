@@ -79,6 +79,24 @@ def lesson_text(origin):
     text = textobject.read()
     print(text + "\n")
 
+# def wait():
+#     c = input(" 1 heptatonics\n 2 pentatonics\n\n")
+#     if c == "1":
+#         lesson_text("scales_heptatonics.txt")
+#         heptatonics()
+#     elif c == "2":
+#         lesson_text("scales_pentatonics.txt")
+#         pentatonics()
+
+# print("What do you want to do \noptions are: \n 1 tones\n 2 intervals\n 3 scales\n 4 chords\n ")
+# i = input("please enter the accoring number: ")
+# decision_dicto = {
+#     "1": lesson_text("tones_lesson.txt"), 
+#     "2": lesson_text("intervals_lesson.txt") and intervals_interactive(),
+#     "3": lesson_text("scales.txt") and wait(),
+#     "4": lesson_text("chords_lesson.txt") and chords_interactive() 
+# }
+
 print("What do you want to do \noptions are: \n 1 tones\n 2 intervals\n 3 scales\n 4 chords\n ")
 i = input("please enter the accoring number: ")
 if i == "1":
