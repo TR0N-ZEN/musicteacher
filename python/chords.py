@@ -9,6 +9,8 @@ def diminished(x): # auch x0 genannt, Bsp.: C0 -> C Es Ges
     return x, x+3, x+6 # Grundton kleineTerz vermidnerteQuinte
 def major_sus4(x):
     return x, x+5, x+7 # Grundton + Quarte + Quinte
+def major_sus2(x):
+    return x, x+2, x+7
 def powerchord_5(x):
     return x, x+7 # Grundton + Quinte
 def major_6(x):
