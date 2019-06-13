@@ -2,6 +2,7 @@ import os
 import intervals
 import scales
 import chords
+from instruments import guitar
 
 tones = ["C", "Cis", "D", "Dis", "E", "F", "Fis", "G", "Gis", "A", "Ais", "B", "c", "cis", "d", "dis", "e", "f", "fis", "g", "gis", "a", "ais", "b", "c'" , "cis'", "d'", "dis'", "e'", "f'", "fis'", "g'", "gis'", "a'", "ais'", "b'"]
 tonalities = ["minor", "major"]
@@ -55,12 +56,15 @@ def heptatonics():
 def pentatonics():
     root = input("You can now enter a root and get the tones of its later queried scale.\n root: ")
     rootinteger = tones.index(root)
-    scaletype = input("Input a scale type: ")
+    scaletype = input("Input a scale type (\"major\" or \"minor\"): ")
     scale_dicto = {
         "major": scales.pentatonics().major(rootinteger),
         "minor": scales.pentatonics().minor(rootinteger)
     }
     translator(scale_dicto.get(scaletype))
+    i = input("\nWanna get the patter for guitar? y/n")
+    if i == "y":
+        guitar.pattern(scale_dicto.get(scaletype))
 
 def chords_interactive():
     root = input("You can now enter a root and get the tones of its later queried chord.\n root: ")
@@ -105,7 +109,7 @@ elif i == "2":
     lesson_text("intervals_lesson.txt")
     intervals_interactive()
 elif i == "3":
-    lesson_text("scales.txt")
+    lesson_text("scales_lesson.txt")
     i = input(" 1 heptatonics\n 2 pentatonics\n\n")
     if i == "1":
         lesson_text("scales_heptatonics.txt")
