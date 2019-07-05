@@ -1,0 +1,9 @@
+Harmony is chosing a a root and a scaletype and only using those tones you get out of the combination of root scale.
+For example:
+	chosing d minor means you are allowed to use the tones: d e f g a b-flat c d
+
+for your playing or composing you are also only allowed to use those notes for your backing with chords,
+this is called harmonisation of chords.
+
+This concept however will be broken in further discussion as it offers more variety which though has to sound good, 
+which means there are rules for breaking the rules.

@@ -2,6 +2,7 @@ import os
 import intervals
 import scales
 import chords
+import harmony
 from instruments import guitar
 
 tones = ["C", "Cis", "D", "Dis", "E", "F", "Fis", "G", "Gis", "A", "Ais", "B", "c", "cis", "d", "dis", "e", "f", "fis", "g", "gis", "a", "ais", "b", "c'" , "cis'", "d'", "dis'", "e'", "f'", "fis'", "g'", "gis'", "a'", "ais'", "b'"]
@@ -78,45 +79,52 @@ def chords_interactive():
     }
     translator(dicto.get(chord_type))
 
+def harmony_interactive():
+    i = input("enter a root:")
+
 def lesson_text(origin):
     textobject = open(origin ,"r")
     text = textobject.read()
     print(text + "\n")
 
-# def wait():
-#     c = input(" 1 heptatonics\n 2 pentatonics\n\n")
-#     if c == "1":
-#         lesson_text("scales_heptatonics.txt")
-#         heptatonics()
-#     elif c == "2":
-#         lesson_text("scales_pentatonics.txt")
-#         pentatonics()
-
-# print("What do you want to do \noptions are: \n 1 tones\n 2 intervals\n 3 scales\n 4 chords\n ")
-# i = input("please enter the accoring number: ")
-# decision_dicto = {
-#     "1": lesson_text("tones_lesson.txt"), 
-#     "2": lesson_text("intervals_lesson.txt") and intervals_interactive(),
-#     "3": lesson_text("scales.txt") and wait(),
-#     "4": lesson_text("chords_lesson.txt") and chords_interactive() 
-# }
+def wait():
+    c = input(" 1 heptatonics\n 2 pentatonics\n\n")
+    if c == "1":
+        lesson_text("scales_heptatonics.txt")
+        heptatonics()
+    elif c == "2":
+        lesson_text("scales_pentatonics.txt")
+        pentatonics()
 
 print("What do you want to do \noptions are: \n 1 tones\n 2 intervals\n 3 scales\n 4 chords\n ")
 i = input("please enter the accoring number: ")
-if i == "1":
-    lesson_text("tones_lesson.txt")
-elif i == "2":
-    lesson_text("intervals_lesson.txt")
-    intervals_interactive()
-elif i == "3":
-    lesson_text("scales_lesson.txt")
-    i = input(" 1 heptatonics\n 2 pentatonics\n\n")
-    if i == "1":
-        lesson_text("scales_heptatonics.txt")
-        heptatonics()
-    elif i == "2":
-        lesson_text("scales_pentatonics.txt")
-        pentatonics()
-elif i == "4":
-    lesson_text("chords_lesson.txt")
-    chords_interactive()
+decision_dicto = {
+    "1": lesson_text("tones_lesson.txt"), 
+    "2": lesson_text("intervals_lesson.txt") and intervals_interactive(),
+    "3": lesson_text("scales.txt") and wait(),
+    "4": lesson_text("chords_lesson.txt") and chords_interactive(),
+    "5": lesson_text("harmony_lesson.txt") and harmony_interactive()
+}
+
+# print("What do you want to do \noptions are: \n 1 tones\n 2 intervals\n 3 scales\n 4 chords\n 5 harmony\n ")
+# i = input("please enter the accoring number: ")
+# if i == "1":
+#     lesson_text("tones_lesson.txt")
+# elif i == "2":
+#     lesson_text("intervals_lesson.txt")
+#     intervals_interactive()
+# elif i == "3":
+#     lesson_text("scales_lesson.txt")
+#     i = input(" 1 heptatonics\n 2 pentatonics\n\n")
+#     if i == "1":
+#         lesson_text("scales_heptatonics.txt")
+#         heptatonics()
+#     elif i == "2":
+#         lesson_text("scales_pentatonics.txt")
+#         pentatonics()
+# elif i == "4":
+#     lesson_text("chords_lesson.txt")
+#     chords_interactive()
+# elif i == "5":
+#     lesson_text("harmony_lesson.txt")
+#     harmony_interactive()
