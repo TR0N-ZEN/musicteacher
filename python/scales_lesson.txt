@@ -5,3 +5,26 @@ Every scale has got a root/ground color/keynote which is the tone the rest of th
 From the root you have got different ways.
 You can choose whether to walk the path of the heptatonic or the pentatonic or even others.
 This decision alters the kind of association.
+
+Pentatonic scales are largely used in improvisation, as they dont have inner tendecies for resolutions and so are easy to handle.
+Heptatonic scales with their patter got inner intervals which strive for resolution. 
+
+short intervene: Scales have universal names for their first, second, thir and so on tone.
+                    1st tone of the scale   - tonic
+                    2nd                     - subdominants-parallele
+                    3rd                     - dominants-parallele
+                    4th                     - subdominant
+                    5th                     - dominant
+                    6th                     - tonics-parallele
+                    7th                     - leading tone
+
+    dissonant tone  strives for
+    - 7th           -> 1st
+    - 2nd           -> 1st
+    - 4th           -> 3rd
+    - 6th           -> 5th
+
+   
+The 7th tone (leading tone) and the 2nd (subdominants-parallele) always strive for resolution in the 1st tone (tonic).
+The 4th (subdominant) strives for the 3rd (dominants-parallele).
+The 6th (tonics-parallele) for the 5th (dominant).

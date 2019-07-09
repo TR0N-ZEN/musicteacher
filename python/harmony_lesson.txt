@@ -5,5 +5,28 @@ For example:
 for your playing or composing you are also only allowed to use those notes for your backing with chords,
 this is called harmonisation of chords.
 
+Each level of a scale gets a certain type of chord.
+
+for minor:
+	base tone					chordtype	
+	- tonic						- minor
+	- subdominants-parallel		- diminished
+	- dominants-parallel		- major
+	- subdominant				- minor
+	- dominant					- minor
+	- tonics-parallele			- major
+	- leading tone				- major
+
+for major:
+	base tone					chordtype	
+	- tonic						- major
+	- subdominants-parallel		- minor
+	- dominants-parallel		- minor
+	- subdominant				- major
+	- dominant					- major
+	- tonics-parallele			- minor
+	- leading tone				- diminished
+
 This concept however will be broken in further discussion as it offers more variety which though has to sound good, 
-which means there are rules for breaking the rules.
+meaning there are rules for breaking the rules.
+Read further negative harmony and modal exchange.

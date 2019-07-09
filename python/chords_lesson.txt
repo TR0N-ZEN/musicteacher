@@ -1,7 +1,7 @@
 Chords are patterns of simultaneously acting tones.
 
 
-Dur chords (abbr.: capital letter or with the appendix "major", e.g. "C major" or "C maj" )
+Major chords (abbr.: capital letter or with the appendix "major", e.g. "C major" or "C maj" )
 consist of the root its major third and thats minor third / the roots perfect fifth.
 (C E G)
 

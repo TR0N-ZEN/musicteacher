@@ -42,30 +42,21 @@ def intervals_interactive():
     }
     print(str(octaves) + "octaves plus" +  intervals[difference])
 
-def heptatonics():
-    root = input("You can now enter a root and get the tones of its later queried scale.\n root: ")
-    rootinteger = tones.index(root)
-    scaletype = input("Input a scale type: ")
-    scale_dicto = {
-        "major": scales.heptatonics().major(rootinteger),
-        "natural minor": scales.heptatonics().natural_minor(rootinteger),
-        "harmonic minor": scales.heptatonics().harmonic_minor(rootinteger),
-        "melodic minor": scales.heptatonics().melodic_minor(rootinteger)
-    }
-    translator(scale_dicto.get(scaletype))
 
-def pentatonics():
-    root = input("You can now enter a root and get the tones of its later queried scale.\n root: ")
+def melody_interactive():
+    root = input("Type a root: ")
     rootinteger = tones.index(root)
-    scaletype = input("Input a scale type (\"major\" or \"minor\"): ")
-    scale_dicto = {
-        "major": scales.pentatonics().major(rootinteger),
-        "minor": scales.pentatonics().minor(rootinteger)
+    scaletypes = {
+        1: scales.heptatonics().major(rootinteger),
+        2: scales.heptatonics().natural_minor(rootinteger),
+        3: scales.heptatonics().harmonic_minor(rootinteger),
+        4: scales.heptatonics().melodic_minor(rootinteger),
+        5: scales.pentatonics().major(rootinteger),
+        6: scales.pentatonics().minor(rootinteger)
     }
-    translator(scale_dicto.get(scaletype))
-    i = input("\nWanna get the patter for guitar? y/n")
-    if i == "y":
-        guitar.pattern(scale_dicto.get(scaletype))
+    st = input("\t1 - heptatonics major\n\t2 - heptatonics natural minor\n\t3 - hepatonics harmonic minor\n\t4 - heptatonics melodic minor\n\t5 - pentatonics major\n\t6 - pentatonics minor\n\n")
+    translator(scaletypes[st])
+
 
 def chords_interactive():
     root = input("You can now enter a root and get the tones of its later queried chord.\n root: ")
@@ -80,51 +71,20 @@ def chords_interactive():
     translator(dicto.get(chord_type))
 
 def harmony_interactive():
-    i = input("enter a root:")
+    
 
 def lesson_text(origin):
     textobject = open(origin ,"r")
     text = textobject.read()
     print(text + "\n")
 
-def wait():
-    c = input(" 1 heptatonics\n 2 pentatonics\n\n")
-    if c == "1":
-        lesson_text("scales_heptatonics.txt")
-        heptatonics()
-    elif c == "2":
-        lesson_text("scales_pentatonics.txt")
-        pentatonics()
 
 print("What do you want to do \noptions are: \n 1 tones\n 2 intervals\n 3 scales\n 4 chords\n ")
 i = input("please enter the accoring number: ")
 decision_dicto = {
     "1": lesson_text("tones_lesson.txt"), 
     "2": lesson_text("intervals_lesson.txt") and intervals_interactive(),
-    "3": lesson_text("scales.txt") and wait(),
+    "3": lesson_text("scales.txt") and melody_interactive(),
     "4": lesson_text("chords_lesson.txt") and chords_interactive(),
     "5": lesson_text("harmony_lesson.txt") and harmony_interactive()
 }
-
-# print("What do you want to do \noptions are: \n 1 tones\n 2 intervals\n 3 scales\n 4 chords\n 5 harmony\n ")
-# i = input("please enter the accoring number: ")
-# if i == "1":
-#     lesson_text("tones_lesson.txt")
-# elif i == "2":
-#     lesson_text("intervals_lesson.txt")
-#     intervals_interactive()
-# elif i == "3":
-#     lesson_text("scales_lesson.txt")
-#     i = input(" 1 heptatonics\n 2 pentatonics\n\n")
-#     if i == "1":
-#         lesson_text("scales_heptatonics.txt")
-#         heptatonics()
-#     elif i == "2":
-#         lesson_text("scales_pentatonics.txt")
-#         pentatonics()
-# elif i == "4":
-#     lesson_text("chords_lesson.txt")
-#     chords_interactive()
-# elif i == "5":
-#     lesson_text("harmony_lesson.txt")
-#     harmony_interactive()
