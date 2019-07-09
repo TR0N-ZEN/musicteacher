@@ -54,8 +54,8 @@ def melody_interactive():
         5: scales.pentatonics().major(rootinteger),
         6: scales.pentatonics().minor(rootinteger)
     }
-    st = input("\t1 - heptatonics major\n\t2 - heptatonics natural minor\n\t3 - hepatonics harmonic minor\n\t4 - heptatonics melodic minor\n\t5 - pentatonics major\n\t6 - pentatonics minor\n\n")
-    translator(scaletypes[st])
+    scaletype = input("\t1 - heptatonics major\n\t2 - heptatonics natural minor\n\t3 - hepatonics harmonic minor\n\t4 - heptatonics melodic minor\n\t5 - pentatonics major\n\t6 - pentatonics minor\n\n")
+    translator(scaletypes[scaletype])
 
 
 def chords_interactive():
@@ -71,7 +71,7 @@ def chords_interactive():
     translator(dicto.get(chord_type))
 
 def harmony_interactive():
-    
+    melody_interactive()
 
 def lesson_text(origin):
     textobject = open(origin ,"r")
